@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <h1>GLOBAL:</h1>
+
+        <ul id="list1">
+            
+        </ul>
+
+        <button id="button1">Update</button>
+
+    </body>
+
+    <script>
+        $("#button1").click(function(){
+            var old_messages = $("#list1").html();
+            var new_messages = "hej";
+            
+            $.get("test1", function(data, status){
+                alert("Data: " + data + "\nStatus: " + status);
+            });
+
+            $( "#list1" ).html(old_messages + "<li>Hej</li>");
+        });
+    </script>
+
+</html>
